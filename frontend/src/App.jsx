@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const API_URL = 'http://192.168.29.125:8000/analyze';
+const API_URL = 'https://ai-resume-analyzer-x8i6.onrender.com';
 
 const FEEDBACK_SECTIONS = [
   { key: 'strengths', title: 'Strengths', className: 'strength-card' },
