@@ -119,7 +119,7 @@ class ResumeAnalyzerHandler(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_POST(self):
-        if self.path != "/analyze":
+        if self.path.rstrip("/") != "/analyze":
             json_response(self, 404, {"error": "Route not found."})
             return
 
@@ -134,7 +134,7 @@ class ResumeAnalyzerHandler(BaseHTTPRequestHandler):
 
         resume_text = body.get("text", "").strip()
         if not resume_text:
-            json_response(self, 400, {"error": "resumeText is required."})
+            json_response(self, 400, {"error": "Text is required."})
             return
 
         try:

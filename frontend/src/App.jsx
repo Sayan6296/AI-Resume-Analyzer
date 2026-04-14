@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const API_URL = 'https://ai-resume-analyzer-x8i6.onrender.com';
+const API_URL = 'https://ai-resume-analyzer-x8i6.onrender.com/analyze';
 
 const FEEDBACK_SECTIONS = [
   { key: 'strengths', title: 'Strengths', className: 'strength-card' },
@@ -135,7 +135,7 @@ function App() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ resumeText: text })
+        body: JSON.stringify({ text: text })
       });
 
       const data = await response.json();
