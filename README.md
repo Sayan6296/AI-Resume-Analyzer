@@ -1,123 +1,105 @@
-# AI Resume Analyzer
+# 🤖 AI Resume Analyzer
 
-A full-stack AI chatbot-style resume analyzer with a pure Python backend and a React frontend.
+A full-stack AI-powered Resume Analyzer that provides instant feedback on resumes using AI.
 
-## Folder Structure
+---
 
-```text
-AI Resume Analyzer/
-├── backend/
-│   └── server.py
-├── frontend/
-│   ├── index.html
-│   ├── package.json
-│   ├── src/
-│   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── styles.css
-│   └── vite.config.js
-└── README.md
-```
+## 🔗 Live Demo
 
-## Backend
+👉 https://ai-resume-analyzer-mu-lovat.vercel.app
 
-- Uses only Python built-in libraries.
-- Exposes `POST /analyze`.
-- Reads resume text from the request body.
-- Calls the OpenRouter Chat Completions API.
-- Returns strengths, weaknesses, and suggestions to the frontend.
+---
 
-## Frontend
+## 📌 About Project
 
-- React UI with a textarea for resume text.
-- Sends a POST request to `http://localhost:8000/analyze`.
-- Shows the AI analysis response in the page.
+This project is a full-stack AI Resume Analyzer built using:
 
-## Setup
+* **Frontend:** React (Vite)
+* **Backend:** Core Python (HTTP Server)
+* **API:** OpenRouter AI API
 
-### 1. Add Your OpenRouter API Key
+Users can paste their resume text and get instant AI-generated feedback including:
 
-In PowerShell:
+* 📊 Score
+* 🎯 Fit (Low / Medium / High)
+* 🚀 Impact
+* 📋 Strengths, Weaknesses, Suggestions
 
-```powershell
-$env:OPENROUTER_API_KEY="your_openrouter_api_key_here"
-```
+---
 
-Optional model override:
+## 🚀 Features
 
-```powershell
-$env:OPENROUTER_MODEL="openai/gpt-4o-mini"
-```
+* 🧠 AI-based resume analysis
+* ⚡ Fast and responsive React UI
+* 🔗 Frontend ↔ Backend API integration
+* 🌐 Fully deployed (Vercel + Render)
+* 📊 Dynamic score, fit & impact system
 
-If `OPENROUTER_MODEL` is not set, the backend uses `openai/gpt-4o-mini`.
+---
 
-### 2. Start The Backend
+## 🛠 Tech Stack
 
-```powershell
-cd backend
-python server.py
-```
+* **Frontend:** React, Vite
+* **Backend:** Core Python (No Flask/Django)
+* **API:** OpenRouter
+* **Deployment:** Vercel (Frontend), Render (Backend)
 
-The backend runs on:
+---
 
-```text
-http://localhost:8000
-```
+## ⚙️ How It Works
 
-### 3. Start The Frontend
+1. User pastes resume in the input box
+2. Frontend sends request to backend (`/analyze`)
+3. Backend calls OpenRouter API
+4. AI generates structured feedback
+5. Results are displayed in UI
 
-Open a second terminal:
+---
 
-```powershell
+## 🧪 Run Locally
+
+### ▶ Frontend
+
+```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-The React app runs on:
+### ▶ Backend
 
-```text
-http://localhost:5173
+```bash
+cd backend
+python server.py
 ```
 
-## How It Works
+---
 
-1. The user pastes resume text into the React textarea.
-2. The user clicks **Analyze Resume**.
-3. React sends:
+## 📸 Preview
 
-```json
-{
-  "resumeText": "..."
-}
-```
+<img width="1349" height="641" alt="ss2" src="https://github.com/user-attachments/assets/78a51103-5e1c-45eb-8ab5-3ba0b98751fe" />
+<img width="1366" height="642" alt="ss1" src="https://github.com/user-attachments/assets/80127064-9b11-4a75-893e-7fb0f608d5e8" />
 
-to:
 
-```text
-POST http://localhost:8000/analyze
-```
+---
 
-4. The Python backend validates the request and creates a prompt for OpenRouter.
-5. OpenRouter returns an AI-generated resume analysis.
-6. The backend returns:
+## 🚧 Future Improvements
 
-```json
-{
-  "analysis": "..."
-}
-```
+* 🔐 Add user authentication
+* 💾 Save resume history
+* 📄 Upload PDF resume support
+* 📈 Improve scoring logic with AI
+* 🎨 Enhance UI/UX
 
-7. The React UI displays the result.
+---
 
-## API Notes
+## 📌 Author
 
-OpenRouter's chat API uses:
+**Sayan Dutta**
+🔗 LinkedIn: https://www.linkedin.com/in/sayan-dutta-45ba8a1b1
 
-```text
-POST https://openrouter.ai/api/v1/chat/completions
-Authorization: Bearer <OPENROUTER_API_KEY>
-Content-Type: application/json
-```
+---
 
-The backend implements this with Python's built-in `urllib.request`, so no backend package installation is needed.
+## ⭐ If you like this project
+
+Give it a star ⭐ on GitHub!
