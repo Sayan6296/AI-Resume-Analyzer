@@ -132,7 +132,7 @@ class ResumeAnalyzerHandler(BaseHTTPRequestHandler):
             json_response(self, 400, {"error": "Invalid JSON body."})
             return
 
-        resume_text = body.get("resumeText", "").strip()
+        resume_text = body.get("text", "").strip()
         if not resume_text:
             json_response(self, 400, {"error": "resumeText is required."})
             return
